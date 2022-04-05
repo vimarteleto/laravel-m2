@@ -16,6 +16,12 @@ class ProductRequest extends FormRequest
         $this->messages = $messages;
     }
 
+    protected function prepareForValidation()
+    {
+        $this->only('name', 'price', 'campaign_id', 'discount_id');
+    }
+
+
     public function rules()
     {
         if($this->method() == 'POST') {
@@ -42,6 +48,6 @@ class ProductRequest extends FormRequest
 
     public function failedValidation(Validator $validator)
     {
-        return response()->json($validator->errors(), 400);
+        response()->json(['succes' => 'false', 'data' => $validator->errors()], 404);
     }
 }

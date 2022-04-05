@@ -2,8 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Http\Requests\Appointment\RegisterGroupRequest;
-use App\Http\Requests\Appointment\UpdateGroupRequest;
+use App\Http\Requests\GroupRequest;
 use App\Models\Group;
 
 class GroupRepository
@@ -15,18 +14,15 @@ class GroupRepository
 		$this->model = $model;
 	}
 
-	public function create(RegisterGroupRequest $request)
+	public function createGroup(GroupRequest $request)
 	{
-		$city = $this->model->create([
-			'name' => $request->name,
-			'group_id' => $request->group_id,
-		]);
-		return $city;
+		$group = $this->model->create($request);
+		return $group;
 	}
 
-	public function getCities()
+	public function getGroups()
 	{
-		return $this->model->with('group')->get();
+		return $this->model->with('cities', 'campaign')->paginate();
 	}
 
 	public function getGroupById($id)
@@ -34,20 +30,18 @@ class GroupRepository
 		return $this->model->find($id);
 	}
 
-	public function updateCty(UpdateGroupRequest $request, $id)
+	public function updateGroup(GroupRequest $request, $id)
 	{
-		$city = $this->model->find($id);
-
-        $request = $request->only('name', 'group_id');
-        $city ? $city->update($request) : $city = null;
-        return $city;
+		$group = $this->model->find($id);
+        $group ? $group->update($request) : $group = null;
+        return $group;
 	}
 
 	public function deleteGroup($id)
 	{
-		$appointment = $this->model->find($id);
-		$appointment ? $appointment->delete() : $appointment = null;
-		return $appointment;
+		$group = $this->model->find($id);
+		$group ? $group->delete() : $group = null;
+		return $group;
 	}
 
 }

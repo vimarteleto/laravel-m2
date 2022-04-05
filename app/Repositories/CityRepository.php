@@ -14,18 +14,15 @@ class CityRepository
 		$this->model = $model;
 	}
 
-	public function create(CityRequest $request)
+	public function createCity(CityRequest $request)
 	{
-		$city = $this->model->create([
-			'name' => $request->name,
-			'group_id' => $request->group_id,
-		]);
+		$city = $this->model->create($request);
 		return $city;
 	}
 
 	public function getCities()
 	{
-		return $this->model->with('group')->get();
+		return $this->model->with('group')->paginate();
 	}
 
 	public function getCityById($id)
@@ -33,7 +30,7 @@ class CityRepository
 		return $this->model->find($id);
 	}
 
-	public function updateCty(CityRequest $request, $id)
+	public function updateCity(CityRequest $request, $id)
 	{
 		$city = $this->model->find($id);
         $city ? $city->update($request) : $city = null;
@@ -42,9 +39,9 @@ class CityRepository
 
 	public function deleteCity($id)
 	{
-		$appointment = $this->model->find($id);
-		$appointment ? $appointment->delete() : $appointment = null;
-		return $appointment;
+		$city = $this->model->find($id);
+		$city ? $city->delete() : $city = null;
+		return $city;
 	}
 
 }

@@ -16,6 +16,11 @@ class DiscountRequest extends FormRequest
         $this->messages = $messages;
     }
 
+    protected function prepareForValidation()
+    {
+        $this->only('name', 'percentage');
+    }
+
     public function rules()
     {
         if($this->method() == 'POST') {
@@ -38,6 +43,6 @@ class DiscountRequest extends FormRequest
 
     public function failedValidation(Validator $validator)
     {
-        return response()->json($validator->errors(), 400);
+        response()->json(['succes' => 'false', 'data' => $validator->errors()], 404);
     }
 }

@@ -6,7 +6,7 @@ use App\Http\Requests\Messages;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 
-class CampaingRequest extends FormRequest
+class CampaignRequest extends FormRequest
 {
 
     protected $messages;
@@ -14,6 +14,11 @@ class CampaingRequest extends FormRequest
     public function __construct(Messages $messages)
     {
         $this->messages = $messages;
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->only('name');
     }
 
     public function rules()
@@ -36,6 +41,6 @@ class CampaingRequest extends FormRequest
 
     public function failedValidation(Validator $validator)
     {
-        return response()->json($validator->errors(), 400);
+        response()->json(['succes' => 'false', 'data' => $validator->errors()], 404);
     }
 }
