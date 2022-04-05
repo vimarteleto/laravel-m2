@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Messages;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class ProductRequest extends FormRequest
 {
@@ -26,7 +27,7 @@ class ProductRequest extends FormRequest
     {
         if($this->method() == 'POST') {
             return [
-                'name' => ['required', 'max:255', 'min:2', ],
+                'name' => ['required', 'max:255', 'min:2', 'unique:App\Models\Product,name'],
                 'price' => ['required', 'numeric', 'digits_between:3,10'],
                 'campaign_id' => ['exists:App\Models\Campaign,id', 'nullable'],
                 'discount_id' => ['exists:App\Models\Discount,id', 'nullable'],
@@ -34,7 +35,7 @@ class ProductRequest extends FormRequest
         }
 
         return [
-            'name' => ['max:255', 'min:', ],
+            'name' => ['max:255', 'min:2', 'unique:App\Models\Product,name'],
             'price' => ['numeric', 'digits_between:3,10'],
             'campaign_id' => ['exists:App\Models\Campaign,id', 'nullable'],
             'discount_id' => ['exists:App\Models\Discount,id', 'nullable'],
@@ -48,6 +49,7 @@ class ProductRequest extends FormRequest
 
     public function failedValidation(Validator $validator)
     {
-        response()->json(['succes' => 'false', 'data' => $validator->errors()], 404);
+        $response = response()->json(['succes' => 'false', 'data' => $validator->errors()], 404);
+        throw new HttpResponseException($response);
     }
 }

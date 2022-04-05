@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Messages;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class DiscountRequest extends FormRequest
 {
@@ -25,13 +26,13 @@ class DiscountRequest extends FormRequest
     {
         if($this->method() == 'POST') {
             return [
-                'name' => ['required', 'max:255', 'min:2'],
+                'name' => ['required', 'max:255', 'min:2', 'unique:App\Models\Discount,name'],
                 'percentage' => ['required', 'max:100', 'min:0'],
             ];
         }
 
         return [
-            'name' => ['max:255', 'min:2'],
+            'name' => ['max:255', 'min:2', 'unique:App\Models\Discount,name'],
             'percentage' => ['max:100', 'min:0'],
         ];
     }
@@ -43,6 +44,7 @@ class DiscountRequest extends FormRequest
 
     public function failedValidation(Validator $validator)
     {
-        response()->json(['succes' => 'false', 'data' => $validator->errors()], 404);
+        $response = response()->json(['succes' => 'false', 'data' => $validator->errors()], 404);
+        throw new HttpResponseException($response);
     }
 }
