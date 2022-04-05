@@ -20,9 +20,9 @@ class DiscountRepository
 		return $discount;
 	}
 
-	public function getDiscounts()
+	public function getDiscounts($perPage)
 	{
-		return $this->model->with('products')->paginate();
+		return $this->model->with('products')->paginate($perPage);
 	}
 
 	public function getDiscountById($id)

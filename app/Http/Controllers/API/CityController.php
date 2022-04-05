@@ -23,9 +23,10 @@ class CityController extends Controller
         return response()->json(['succes' => 'true', 'data' => $city], 201);
     }
 
-    public function getCitys()
+    public function getCitys(Request $request)
     {
-    	$cities = $this->repository->getCities();
+        $perPage = $request->input('perPage', 10);
+    	$cities = $this->repository->getCities($perPage);
         return response()->json(['succes' => 'true', 'data' => $cities], 200);
     }
 

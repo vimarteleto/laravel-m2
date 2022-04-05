@@ -23,9 +23,10 @@ class GroupController extends Controller
         return response()->json(['succes' => 'true', 'data' => $group], 201);
     }
 
-    public function getGroups()
+    public function getGroups(Request $request)
     {
-    	$groups = $this->repository->getGroups();
+        $perPage = $request->input('perPage', 10);
+    	$groups = $this->repository->getGroups($perPage);
         return response()->json(['succes' => 'true', 'data' => $groups], 200);
     }
 

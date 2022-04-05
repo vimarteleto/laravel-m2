@@ -23,9 +23,10 @@ class ProductController extends Controller
         return response()->json(['succes' => 'true', 'data' => $product], 201);
     }
 
-    public function getProducts()
+    public function getProducts(Request $request)
     {
-    	$products = $this->repository->getProducts();
+        $perPage = $request->input('perPage', 10);
+    	$products = $this->repository->getProducts($perPage);
         return response()->json(['succes' => 'true', 'data' => $products], 200);
     }
 

@@ -20,9 +20,9 @@ class GroupRepository
 		return $group;
 	}
 
-	public function getGroups()
+	public function getGroups($perPage)
 	{
-		return $this->model->with('cities', 'campaign')->paginate();
+		return $this->model->with('cities', 'campaign')->paginate($perPage);
 	}
 
 	public function getGroupById($id)

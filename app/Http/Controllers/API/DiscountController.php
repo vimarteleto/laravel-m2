@@ -23,9 +23,10 @@ class DiscountController extends Controller
         return response()->json(['succes' => 'true', 'data' => $discount], 201);
     }
 
-    public function getDiscounts()
+    public function getDiscounts(Request $request)
     {
-    	$discounts = $this->repository->getDiscounts();
+        $perPage = $request->input('perPage', 10);
+    	$discounts = $this->repository->getDiscounts($perPage);
         return response()->json(['succes' => 'true', 'data' => $discounts], 200);
     }
 

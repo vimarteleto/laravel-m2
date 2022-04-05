@@ -20,9 +20,9 @@ class ProductRepository
 		return $product;
 	}
 
-	public function getProducts()
+	public function getProducts($perPage)
 	{
-		return $this->model->with('campaign', 'discount')->paginate();
+		return $this->model->with('campaign', 'discount')->paginate($perPage);
 	}
 
 	public function getProductById($id)

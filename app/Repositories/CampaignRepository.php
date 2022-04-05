@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Http\Requests\CampaignRequest;
 use App\Models\Campaign;
+use Illuminate\Http\Request;
 
 class CampaignRepository
 {
@@ -20,9 +21,9 @@ class CampaignRepository
 		return $campaign;
 	}
 
-	public function getCampaigns()
+	public function getCampaigns($perPage)
 	{
-		return $this->model->with('groups', 'products')->paginate();
+		return $this->model->with('groups', 'products')->paginate($perPage);
 	}
 
 	public function getCampaignById($id)

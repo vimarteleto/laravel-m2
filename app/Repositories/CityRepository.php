@@ -20,9 +20,9 @@ class CityRepository
 		return $city;
 	}
 
-	public function getCities()
+	public function getCities($perPage)
 	{
-		return $this->model->with('group')->paginate();
+		return $this->model->with('group')->paginate($perPage);
 	}
 
 	public function getCityById($id)

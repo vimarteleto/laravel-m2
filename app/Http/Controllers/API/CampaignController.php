@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CampaignRequest;
 use App\Repositories\CampaignRepository;
+use Illuminate\Http\Request;
 
 class CampaignController extends Controller
 {
@@ -22,9 +23,10 @@ class CampaignController extends Controller
         return response()->json(['succes' => 'true', 'data' => $campaign], 201);
     }
 
-    public function getCampaigns()
+    public function getCampaigns(Request $request)
     {
-    	$campaigns = $this->repository->getCampaigns();
+        $perPage = $request->input('perPage', 10);
+    	$campaigns = $this->repository->getCampaigns($perPage);
         return response()->json(['succes' => 'true', 'data' => $campaigns], 200);
     }
 
