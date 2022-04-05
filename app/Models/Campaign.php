@@ -10,10 +10,11 @@ class Campaign extends Model
     use HasFactory;
 
     protected $guarded = [];
+    protected $hidden = ['pivot'];
 
     public function groups()
     {
-        return $this->hasMany(Group::class);
+        return $this->belongsToMany(Group::class, 'campaign_group');
     }
 
     public function products()

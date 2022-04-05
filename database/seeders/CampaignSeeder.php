@@ -15,11 +15,11 @@ class CampaignSeeder extends Seeder
     public function run()
     {
         DB::table('campaigns')->insert([
-            ['name' => 'Campanha 1'],
-            ['name' => 'Campanha 2'],
-            ['name' => 'Campanha 3'],
-            ['name' => 'Campanha 4'],
-            ['name' => 'Campanha 5'],
+            ['name' => 'Campanha 1', 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+            ['name' => 'Campanha 2', 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+            ['name' => 'Campanha 3', 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+            ['name' => 'Campanha 4', 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+            ['name' => 'Campanha 5', 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
         ]);
     }
 }

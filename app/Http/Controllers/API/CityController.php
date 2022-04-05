@@ -23,11 +23,11 @@ class CityController extends Controller
         return response()->json(['succes' => 'true', 'data' => $city], 201);
     }
 
-    public function getCitys(Request $request)
+    public function getCities(Request $request)
     {
         $perPage = $request->input('perPage', 10);
     	$cities = $this->repository->getCities($perPage);
-        return response()->json(['succes' => 'true', 'data' => $cities], 200);
+        return response()->json($cities, 200);
     }
 
     public function getCityById($id)

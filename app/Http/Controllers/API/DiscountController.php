@@ -27,7 +27,7 @@ class DiscountController extends Controller
     {
         $perPage = $request->input('perPage', 10);
     	$discounts = $this->repository->getDiscounts($perPage);
-        return response()->json(['succes' => 'true', 'data' => $discounts], 200);
+        return response()->json($discounts, 200);
     }
 
     public function getDiscountById($id)

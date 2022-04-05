@@ -15,12 +15,11 @@ class DiscountSeeder extends Seeder
     public function run()
     {
         DB::table('discounts')->insert([
-            ['name' => 'Desconto 1', 'percentage' => 10],
-            ['name' => 'Desconto 2', 'percentage' => 20],
-            ['name' => 'Desconto 3', 'percentage' => 30],
-            ['name' => 'Desconto 4', 'percentage' => 40],
-            ['name' => 'Desconto 5', 'percentage' => 50],
-            ['name' => 'Desconto 6', 'percentage' => 60],
+            ['name' => 'Desconto 1', 'percentage' => 10, 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+            ['name' => 'Desconto 2', 'percentage' => 20, 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+            ['name' => 'Desconto 3', 'percentage' => 30, 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+            ['name' => 'Desconto 4', 'percentage' => 40, 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
+            ['name' => 'Desconto 5', 'percentage' => 50, 'created_at' => date("Y-m-d H:i:s"), 'updated_at' => date("Y-m-d H:i:s")],
         ]);
     }
 }

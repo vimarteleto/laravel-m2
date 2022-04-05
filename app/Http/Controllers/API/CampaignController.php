@@ -27,7 +27,7 @@ class CampaignController extends Controller
     {
         $perPage = $request->input('perPage', 10);
     	$campaigns = $this->repository->getCampaigns($perPage);
-        return response()->json(['succes' => 'true', 'data' => $campaigns], 200);
+        return response()->json($campaigns, 200);
     }
 
     public function getCampaignById($id)

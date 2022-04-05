@@ -27,7 +27,7 @@ class GroupController extends Controller
     {
         $perPage = $request->input('perPage', 10);
     	$groups = $this->repository->getGroups($perPage);
-        return response()->json(['succes' => 'true', 'data' => $groups], 200);
+        return response()->json($groups, 200);
     }
 
     public function getGroupById($id)

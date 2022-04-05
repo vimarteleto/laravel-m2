@@ -16,8 +16,13 @@ class Group extends Model
         return $this->hasMany(City::class);
     }
 
-    public function campaign()
+    public function campaigns()
     {
-        return $this->hasOne(Campaign::class);
+        return $this->belongsToMany(Campaign::class, 'campaign_group');
+    }
+
+    public function activeCampaign()
+    {
+        return $this->campaigns()->wherePivot('active', 1);
     }
 }

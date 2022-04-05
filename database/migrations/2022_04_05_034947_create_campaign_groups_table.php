@@ -13,16 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('campaign_group', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->float('price', 10, 2);
-            $table->unsignedBigInteger('campaign_id')->nullable();
-            $table->unsignedBigInteger('discount_id')->nullable();
             $table->timestamps();
+            $table->unsignedBigInteger('campaign_id')->nullable();
+            $table->unsignedBigInteger('group_id')->nullable();
+            $table->boolean('active')->default(0);
+
+            $table->unique(['campaign_id', 'group_id']);
 
             $table->foreign('campaign_id')->references('id')->on('campaigns')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreign('discount_id')->references('id')->on('discounts')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('group_id')->references('id')->on('groups')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
@@ -33,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('campaign_groups');
     }
 };

@@ -22,12 +22,12 @@ class GroupRepository
 
 	public function getGroups($perPage)
 	{
-		return $this->model->with('cities', 'campaign')->paginate($perPage);
+		return $this->model->with('cities', 'campaigns')->with('activeCampaign')->paginate($perPage);
 	}
 
 	public function getGroupById($id)
 	{
-		return $this->model->find($id);
+		return $this->model->with('cities', 'campaigns')->find($id);
 	}
 
 	public function updateGroup(GroupRequest $request, $id)

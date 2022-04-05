@@ -27,7 +27,7 @@ Route::delete('/campaign/{id}', [CampaignController::class, 'deleteCampaign']);
 
 // City
 Route::post('/city', [CityController::class, 'createCity']);
-Route::get('/cities', [CityController::class, 'getCitis']);
+Route::get('/cities', [CityController::class, 'getCities']);
 Route::get('/city/{id}', [CityController::class, 'getCityById']);
 Route::put('/city/{id}', [CityController::class, 'updateCity']);
 Route::delete('/city/{id}', [CityController::class, 'deleteCity']);

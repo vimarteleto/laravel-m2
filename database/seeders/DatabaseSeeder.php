@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             DiscountSeeder::class,
             ProductSeeder::class,
+            CampaignGroupSeeder::class,
         ]);
     }
 }

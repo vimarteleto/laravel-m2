@@ -27,7 +27,7 @@ class ProductController extends Controller
     {
         $perPage = $request->input('perPage', 10);
     	$products = $this->repository->getProducts($perPage);
-        return response()->json(['succes' => 'true', 'data' => $products], 200);
+        return response()->json($products, 200);
     }
 
     public function getProductById($id)
