@@ -19,7 +19,7 @@ class CityRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        $this->only('name', 'group_id');
+        $this->replace($this->only('name', 'group_id'));
     }
 
     public function rules()

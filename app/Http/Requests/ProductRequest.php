@@ -19,7 +19,7 @@ class ProductRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        $this->only('name', 'price', 'campaign_id', 'discount_id');
+        $this->replace($this->only('name', 'price', 'campaign_id', 'discount_id'));
     }
 
 

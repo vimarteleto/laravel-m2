@@ -16,7 +16,7 @@ class CityRepository
 
 	public function createCity(CityRequest $request)
 	{
-		$city = $this->model->create($request);
+		$city = $this->model->create($request->input());
 		return $city;
 	}
 

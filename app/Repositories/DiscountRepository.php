@@ -16,7 +16,7 @@ class DiscountRepository
 
 	public function createDiscount(DiscountRequest $request)
 	{
-		$discount = $this->model->create($request);
+		$discount = $this->model->create($request->input());
 		return $discount;
 	}
 

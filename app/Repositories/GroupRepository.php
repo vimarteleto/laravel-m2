@@ -16,7 +16,7 @@ class GroupRepository
 
 	public function createGroup(GroupRequest $request)
 	{
-		$group = $this->model->create($request);
+		$group = $this->model->create($request->input());
 		return $group;
 	}
 

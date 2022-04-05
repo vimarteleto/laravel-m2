@@ -19,7 +19,8 @@ class CampaignRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        $this->only('name');
+        $this->replace($this->only('name'));
+
     }
 
     public function rules()

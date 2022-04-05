@@ -19,7 +19,7 @@ class GroupRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        $this->only('name', 'campaign_id');
+        $this->replace($this->only('name', 'campaign_id'));
     }
 
     public function rules()

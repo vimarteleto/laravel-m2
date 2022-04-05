@@ -17,7 +17,7 @@ class CampaignRepository
 
 	public function createCampaign(CampaignRequest $request)
 	{
-		$campaign = $this->model->create($request);
+		$campaign = $this->model->create($request->input());
 		return $campaign;
 	}
 

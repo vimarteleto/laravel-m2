@@ -16,7 +16,7 @@ class ProductRepository
 
 	public function createProduct(ProductRequest $request)
 	{
-		$product = $this->model->create($request);
+		$product = $this->model->create($request->input());
 		return $product;
 	}
 

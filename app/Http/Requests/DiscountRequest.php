@@ -19,7 +19,7 @@ class DiscountRequest extends FormRequest
 
     protected function prepareForValidation()
     {
-        $this->only('name', 'percentage');
+        $this->replace($this->only('name', 'percentage'));
     }
 
     public function rules()
