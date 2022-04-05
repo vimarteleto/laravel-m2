@@ -27,7 +27,7 @@ class DiscountRepository
 
 	public function getDiscountById($id)
 	{
-		return $this->model->find($id);
+		return $this->model->with('products')->find($id);
 	}
 
 	public function updateDiscount(DiscountRequest $request, $id)

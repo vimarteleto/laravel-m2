@@ -27,7 +27,7 @@ class ProductRepository
 
 	public function getProductById($id)
 	{
-		return $this->model->find($id);
+		return $this->model->with('campaign', 'discount')->find($id);
 	}
 
 	public function updateProduct(ProductRequest $request, $id)

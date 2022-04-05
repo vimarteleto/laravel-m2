@@ -21,4 +21,14 @@ class Campaign extends Model
     {
         return $this->hasMany(Product::class);
     }
+
+    public function active_on()
+    {
+        return $this->groups()->wherePivot('active', 1);
+    }
+
+    public function inactive_on()
+    {
+        return $this->groups()->wherePivot('active', 0);
+    }
 }

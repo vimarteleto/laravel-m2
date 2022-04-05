@@ -10,6 +10,7 @@ class Group extends Model
     use HasFactory;
 
     protected $guarded = [];
+    protected $hidden = ['pivot'];
 
     public function cities()
     {
@@ -24,5 +25,10 @@ class Group extends Model
     public function activeCampaign()
     {
         return $this->campaigns()->wherePivot('active', 1);
+    }
+
+    public function inactiveCampaigns()
+    {
+        return $this->campaigns()->wherePivot('active', 0);
     }
 }

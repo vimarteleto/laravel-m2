@@ -27,7 +27,7 @@ class CityRepository
 
 	public function getCityById($id)
 	{
-		return $this->model->find($id);
+		return $this->model->with('group')->find($id);
 	}
 
 	public function updateCity(CityRequest $request, $id)

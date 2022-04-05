@@ -23,12 +23,12 @@ class CampaignRepository
 
 	public function getCampaigns($perPage)
 	{
-		return $this->model->with('groups', 'products')->paginate($perPage);
+		return $this->model->with('products', 'inactive_on', 'active_on')->paginate($perPage);
 	}
 
 	public function getCampaignById($id)
 	{
-		return $this->model->find($id);
+		return $this->model->with('products', 'inactive_on', 'active_on')->find($id);
 	}
 
 	public function updateCampaign(CampaignRequest $request, $id)
