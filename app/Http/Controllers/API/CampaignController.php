@@ -35,7 +35,7 @@ class CampaignController extends Controller
         $campaign = $this->repository->getCampaignById($id);
         return $campaign ?
             response()->json(['succes' => 'true', 'data' => $campaign], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
     }
 
     public function updateCampaign(CampaignRequest $request, $id)
@@ -43,7 +43,7 @@ class CampaignController extends Controller
         $campaign = $this->repository->updateCampaign($request, $id);
 		return $campaign ?
             response()->json(['succes' => 'true', 'data' => $campaign], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 
     public function deleteCampaign($id)
@@ -51,6 +51,6 @@ class CampaignController extends Controller
         $campaign = $this->repository->deleteCampaign($id);
         return $campaign ?
             response()->json(['succes' => 'true', 'data' => $campaign], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 }

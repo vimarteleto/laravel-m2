@@ -33,7 +33,7 @@ class CityRepository
 	public function updateCity(CityRequest $request, $id)
 	{
 		$city = $this->model->find($id);
-        $city ? $city->update($request) : $city = null;
+        $city ? $city->update($request->input()) : $city = null;
         return $city;
 	}
 

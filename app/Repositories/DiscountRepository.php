@@ -33,7 +33,7 @@ class DiscountRepository
 	public function updateDiscount(DiscountRequest $request, $id)
 	{
 		$discount = $this->model->find($id);
-        $discount ? $discount->update($request) : $discount = null;
+        $discount ? $discount->update($request->input()) : $discount = null;
         return $discount;
 	}
 

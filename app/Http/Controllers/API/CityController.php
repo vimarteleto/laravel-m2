@@ -35,7 +35,7 @@ class CityController extends Controller
         $city = $this->repository->getCityById($id);
         return $city ?
             response()->json(['succes' => 'true', 'data' => $city], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
     }
 
     public function updateCity(CityRequest $request, $id)
@@ -43,7 +43,7 @@ class CityController extends Controller
         $city = $this->repository->updateCity($request, $id);
 		return $city ?
             response()->json(['succes' => 'true', 'data' => $city], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 
     public function deleteCity($id)
@@ -51,6 +51,6 @@ class CityController extends Controller
         $city = $this->repository->deleteCity($id);
         return $city ?
             response()->json(['succes' => 'true', 'data' => $city], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 }

@@ -33,7 +33,7 @@ class ProductRepository
 	public function updateProduct(ProductRequest $request, $id)
 	{
 		$product = $this->model->find($id);
-        $product ? $product->update($request) : $product = null;
+        $product ? $product->update($request->input()) : $product = null;
         return $product;
 	}
 

@@ -34,7 +34,7 @@ class CampaignRepository
 	public function updateCampaign(CampaignRequest $request, $id)
 	{
 		$campaign = $this->model->find($id);
-        $campaign ? $campaign->update($request) : $campaign = null;
+        $campaign ? $campaign->update($request->input()) : $campaign = null;
         return $campaign;
 	}
 

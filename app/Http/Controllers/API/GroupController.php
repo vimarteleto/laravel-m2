@@ -35,7 +35,7 @@ class GroupController extends Controller
         $group = $this->repository->getGroupById($id);
         return $group ?
             response()->json(['succes' => 'true', 'data' => $group], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
     }
 
     public function updateGroup(GroupRequest $request, $id)
@@ -43,7 +43,7 @@ class GroupController extends Controller
         $group = $this->repository->updateGroup($request, $id);
 		return $group ?
             response()->json(['succes' => 'true', 'data' => $group], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 
     public function deleteGroup($id)
@@ -51,6 +51,6 @@ class GroupController extends Controller
         $group = $this->repository->deleteGroup($id);
         return $group ?
             response()->json(['succes' => 'true', 'data' => $group], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 }

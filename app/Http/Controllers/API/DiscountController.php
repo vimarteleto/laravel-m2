@@ -35,7 +35,7 @@ class DiscountController extends Controller
         $discount = $this->repository->getDiscountById($id);
         return $discount ?
             response()->json(['succes' => 'true', 'data' => $discount], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
     }
 
     public function updateDiscount(DiscountRequest $request, $id)
@@ -43,7 +43,7 @@ class DiscountController extends Controller
         $discount = $this->repository->updateDiscount($request, $id);
 		return $discount ?
             response()->json(['succes' => 'true', 'data' => $discount], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 
     public function deleteDiscount($id)
@@ -51,6 +51,6 @@ class DiscountController extends Controller
         $discount = $this->repository->deleteDiscount($id);
         return $discount ?
             response()->json(['succes' => 'true', 'data' => $discount], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 }

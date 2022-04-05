@@ -33,7 +33,7 @@ class GroupRepository
 	public function updateGroup(GroupRequest $request, $id)
 	{
 		$group = $this->model->find($id);
-        $group ? $group->update($request) : $group = null;
+        $group ? $group->update($request->input()) : $group = null;
         return $group;
 	}
 

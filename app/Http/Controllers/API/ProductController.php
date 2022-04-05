@@ -35,7 +35,7 @@ class ProductController extends Controller
         $product = $this->repository->getProductById($id);
         return $product ?
             response()->json(['succes' => 'true', 'data' => $product], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
     }
 
     public function updateProduct(ProductRequest $request, $id)
@@ -43,7 +43,7 @@ class ProductController extends Controller
         $product = $this->repository->updateProduct($request, $id);
 		return $product ?
             response()->json(['succes' => 'true', 'data' => $product], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 
     public function deleteProduct($id)
@@ -51,6 +51,6 @@ class ProductController extends Controller
         $product = $this->repository->deleteProduct($id);
         return $product ?
             response()->json(['succes' => 'true', 'data' => $product], 200) :
-            response()->json(['succes' => 'false', 'data' => $this->notFound], 404);
+            response()->json(['succes' => 'false', 'data' => ['message' => $this->notFound]], 404);
 	}
 }
