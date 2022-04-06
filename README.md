@@ -6,11 +6,6 @@ As aplicações ocupam as portas padrões.
 
 ## Instalação da aplicação
 
-Para instalação das dependências via composer:
-```bash
-vendor/bin/sail composer install
-```
-
 Para criação do arquivo de variáveis de ambiente:
 ```bash
 cp .env.example .env
@@ -19,6 +14,11 @@ cp .env.example .env
 Para inicialização dos containers:
 ```bash
 vendor/bin/sail up
+```
+
+Para instalação das dependências via composer:
+```bash
+vendor/bin/sail composer install
 ```
 
 Para criação das tabelas do banco de dados:
