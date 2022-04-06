@@ -12,4 +12,6 @@ class CampaignGroup extends Model
     protected $table = 'campaign_group';
 
     protected $guarded = [];
+    protected $hidden = ['updated_at'];
+
 }
