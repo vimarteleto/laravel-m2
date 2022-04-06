@@ -11,14 +11,14 @@ Para criação do arquivo de variáveis de ambiente:
 cp .env.example .env
 ```
 
+Para instalação das dependências via imagem do composer:
+```bash
+docker run --rm -v $(pwd):/app composer/composer install
+```
+
 Para inicialização dos containers:
 ```bash
 vendor/bin/sail up
-```
-
-Para instalação das dependências via composer:
-```bash
-vendor/bin/sail composer install
 ```
 
 Para criação das tabelas do banco de dados:
