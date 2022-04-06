@@ -1,0 +1,27 @@
+_id: req_a4077697daea46bba43df937d75d09a7
+type: Request
+parentId: fld_58bad409ae7d4bda9ec70c5879421b04
+modified: 1649219176625
+created: 1649126125531
+url: "{{ _.url }}{% request 'name', '', 0 %}/1"
+name: /campaign
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_4126f153791b4bd8b4d4ec4398ab5846
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1645330301728
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

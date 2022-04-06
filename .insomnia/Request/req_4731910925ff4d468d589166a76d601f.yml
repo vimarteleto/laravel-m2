@@ -1,0 +1,36 @@
+_id: req_4731910925ff4d468d589166a76d601f
+type: Request
+parentId: fld_cfe6b8cb32b941beb0aa5989770d8f49
+modified: 1649218432661
+created: 1649128616664
+url: "{{ _.url }}{% request 'name', '', 0 %}/16"
+name: /city
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Teste 2",
+    	"group_id": 2
+    }
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_e33f6d33fb154a0aaf524c3fb5b4cb34
+  - name: Content-Type
+    value: application/json
+    id: pair_2ecfd19735914e9492b5b02c6a593569
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124968037.125
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

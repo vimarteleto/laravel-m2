@@ -1,0 +1,38 @@
+_id: req_5707e2e04c504ba2b8362ebc359bbef2
+type: Request
+parentId: fld_f0f2927e0db84f7fb83abbc5fbb31442
+modified: 1649217847272
+created: 1649128779185
+url: "{{ _.url }}{% request 'name', '', 0 %}/17"
+name: /product
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Teste 2",
+    	"price": 200,
+    	"campaign_id": 1,
+    	"discount_id": 1
+    }
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_c7c4bb30fb484d26b7173c4880767f3f
+  - name: Content-Type
+    value: application/json
+    id: pair_36cf9ce6d8cb4b7aa007a1e62baf7003
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649128579189.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

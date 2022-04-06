@@ -1,0 +1,30 @@
+_id: req_b05c46ea17614255bb987009183794e2
+type: Request
+parentId: wrk_7219720c40fd4ff186c521e7e1d7493a
+modified: 1649217440131
+created: 1649212097365
+url: "{{ _.url }}{% request 'name', '', 0 %}"
+name: /register
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"username": "User",
+    	"password": 12345
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_99ffb44631564606a79279a4daf07e5b
+authentication: {}
+metaSortKey: -1649212097365
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

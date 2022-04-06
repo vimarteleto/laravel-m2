@@ -1,0 +1,35 @@
+_id: req_2b3e04b5fdef40ea9848dd21962ba037
+type: Request
+parentId: fld_6f41fb2a808a4d899510957d231aba99
+modified: 1649218280572
+created: 1649128723434
+url: "{{ _.url }}{% request 'name', '', 0 %}/6"
+name: /group
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Teste 2"
+    }
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_5dfa68d625184f94b019f6024be2b81e
+  - name: Content-Type
+    value: application/json
+    id: pair_fd68da6516d94bd2851c332cb52f1065
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124967899.625
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

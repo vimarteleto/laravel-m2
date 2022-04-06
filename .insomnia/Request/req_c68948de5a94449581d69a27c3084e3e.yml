@@ -1,0 +1,27 @@
+_id: req_c68948de5a94449581d69a27c3084e3e
+type: Request
+parentId: fld_cfe6b8cb32b941beb0aa5989770d8f49
+modified: 1649218436956
+created: 1649128623778
+url: "{{ _.url }}{% request 'name', '', 0 %}/16"
+name: /city
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_feafb2db87db4b16996925b0e481e0e8
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124968035.5625
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

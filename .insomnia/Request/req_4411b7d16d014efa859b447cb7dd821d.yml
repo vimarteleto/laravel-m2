@@ -1,0 +1,30 @@
+_id: req_4411b7d16d014efa859b447cb7dd821d
+type: Request
+parentId: wrk_7219720c40fd4ff186c521e7e1d7493a
+modified: 1649217454079
+created: 1649212236558
+url: "{{ _.url }}{% request 'name', '', 0 %}"
+name: /login
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"username": "User",
+    	"password": 12345
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_99ffb44631564606a79279a4daf07e5b
+authentication: {}
+metaSortKey: -1649170338352.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,35 @@
+_id: req_ed7e60db0a3f48289c92789fa758d567
+type: Request
+parentId: fld_58bad409ae7d4bda9ec70c5879421b04
+modified: 1649219106067
+created: 1649126052459
+url: "{{ _.url }}{% request 'name', '', 0 %}"
+name: /campaign
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Teste"
+    }
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    id: pair_db1ffcc9fd144c549e438dd3a31d1eab
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    id: pair_057e7a582276421187ac7f7c8859401a
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124968084
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

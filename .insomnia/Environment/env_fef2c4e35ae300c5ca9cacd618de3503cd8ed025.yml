@@ -1,0 +1,17 @@
+_id: env_fef2c4e35ae300c5ca9cacd618de3503cd8ed025
+type: Environment
+parentId: wrk_7219720c40fd4ff186c521e7e1d7493a
+modified: 1649216267811
+created: 1649124929920
+name: Base Environment
+data:
+  url: http://localhost/api
+  token: "{% response 'body', 'req_4411b7d16d014efa859b447cb7dd821d',
+    'b64::JFsnZGF0YSddWyd0b2tlbidd::46b', 'never', 60 %}"
+dataPropertyOrder:
+  "&":
+    - url
+    - token
+color: null
+isPrivate: false
+metaSortKey: 1649124929920

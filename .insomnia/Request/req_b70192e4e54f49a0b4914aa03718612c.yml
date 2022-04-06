@@ -1,0 +1,27 @@
+_id: req_b70192e4e54f49a0b4914aa03718612c
+type: Request
+parentId: fld_dc3f2b6bd71a42e3adc60cea936aebda
+modified: 1649217325474
+created: 1649128672138
+url: "{{ _.url }}{% request 'name', '', 0 %}"
+name: /discounts
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_f0d3cbee4e4b4db48a971967fc8a6abf
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124968027.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

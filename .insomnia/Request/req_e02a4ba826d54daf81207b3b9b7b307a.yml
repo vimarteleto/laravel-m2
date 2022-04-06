@@ -1,0 +1,27 @@
+_id: req_e02a4ba826d54daf81207b3b9b7b307a
+type: Request
+parentId: fld_6f41fb2a808a4d899510957d231aba99
+modified: 1649218286501
+created: 1649128729330
+url: "{{ _.url }}{% request 'name', '', 0 %}/6"
+name: /group
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_3770324f8e514baeacf9640e7b51cce4
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124967849.625
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

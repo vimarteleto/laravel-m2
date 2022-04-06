@@ -1,0 +1,27 @@
+_id: req_844f83aa73294b2e923e8fab73bf83c3
+type: Request
+parentId: fld_dc3f2b6bd71a42e3adc60cea936aebda
+modified: 1649218365056
+created: 1649128700311
+url: "{{ _.url }}{% request 'name', '', 0 %}/6"
+name: /discount
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_c2a88e6d13b04a54b5d6a6061e20ba61
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124967902.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
