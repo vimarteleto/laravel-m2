@@ -1,0 +1,36 @@
+_id: req_0598d41fdb3740a0939fda682f983928
+type: Request
+parentId: fld_dc3f2b6bd71a42e3adc60cea936aebda
+modified: 1649218360087
+created: 1649128690120
+url: "{{ _.url }}{% request 'name', '', 0 %}/6"
+name: /discount
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Teste 2",
+    	"percentage": 20
+    }
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_8f8b0846388c492ca35938f5bc202c69
+  - name: Content-Type
+    value: application/json
+    id: pair_55ab378b010c40efa95ca34a1a10ec89
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124967952.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

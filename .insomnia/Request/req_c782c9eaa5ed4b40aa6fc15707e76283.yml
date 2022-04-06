@@ -1,0 +1,27 @@
+_id: req_c782c9eaa5ed4b40aa6fc15707e76283
+type: Request
+parentId: fld_6f41fb2a808a4d899510957d231aba99
+modified: 1649217305235
+created: 1649128719569
+url: "{{ _.url }}{% request 'name', '', 0 %}/1"
+name: /group
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_d782a4b82de5456e8e1882b5cfa750c4
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124967949.625
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

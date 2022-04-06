@@ -1,0 +1,27 @@
+_id: req_f4c616338eb043b695679ca2fc686681
+type: Request
+parentId: fld_cfe6b8cb32b941beb0aa5989770d8f49
+modified: 1649217343595
+created: 1649128411991
+url: "{{ _.url }}{% request 'name', '', 0 %}"
+name: /cities
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_f6c1e1e4ccce4c86bce0740a370100c4
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124968046.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,27 @@
+_id: req_ae52b720ea7047fc9ec0a1643dc7c92f
+type: Request
+parentId: fld_58bad409ae7d4bda9ec70c5879421b04
+modified: 1649217370838
+created: 1649128630530
+url: "{{ _.url }}{% request 'name', '', 0 %}/6"
+name: /campaign
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_2ffe8a34c38f488ca13a9cfe13b4fdd4
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1642484301998.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

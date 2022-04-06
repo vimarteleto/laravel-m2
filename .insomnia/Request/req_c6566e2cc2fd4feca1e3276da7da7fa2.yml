@@ -1,0 +1,27 @@
+_id: req_c6566e2cc2fd4feca1e3276da7da7fa2
+type: Request
+parentId: fld_f0f2927e0db84f7fb83abbc5fbb31442
+modified: 1649218239251
+created: 1649128783432
+url: "{{ _.url }}{% request 'name', '', 0 %}/17"
+name: /product
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_832cab655c3c4e3a85979ca0cf20152e
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649128579139.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

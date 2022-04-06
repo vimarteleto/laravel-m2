@@ -1,0 +1,27 @@
+_id: req_c572ab21e5e142d0bbabfb1669b23b4c
+type: Request
+parentId: fld_cfe6b8cb32b941beb0aa5989770d8f49
+modified: 1649217348137
+created: 1649128608261
+url: "{{ _.url }}{% request 'name', '', 0 %}/1"
+name: /city
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_91237024a9bf47e3b1f3ed6a62953eaf
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124968040.25
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

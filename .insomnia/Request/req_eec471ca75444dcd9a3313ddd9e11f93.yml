@@ -1,0 +1,28 @@
+_id: req_eec471ca75444dcd9a3313ddd9e11f93
+type: Request
+parentId: fld_f0f2927e0db84f7fb83abbc5fbb31442
+modified: 1649217562374
+created: 1649128771457
+url: "{{ _.url }}{% request 'name', '', 0 %}"
+name: /products
+description: ""
+method: GET
+body: {}
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_645abcfcc1de4415a893a211aa6976bd
+    disabled: false
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649128579289.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

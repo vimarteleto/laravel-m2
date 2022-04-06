@@ -1,0 +1,35 @@
+_id: req_825c3e22f0464033b2fb960e24d15c7f
+type: Request
+parentId: fld_6f41fb2a808a4d899510957d231aba99
+modified: 1649218257625
+created: 1649128711954
+url: "{{ _.url }}{% request 'name', '', 0 %}"
+name: /group
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Teste"
+    }
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_c052b74604eb497dad6d17e4dacaf540
+  - name: Content-Type
+    value: application/json
+    id: pair_562a8b08632f44dfb979c16e42f44501
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124968049.625
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

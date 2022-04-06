@@ -1,0 +1,36 @@
+_id: req_4e77bb2f4c944074ad867e4f65f39f80
+type: Request
+parentId: fld_dc3f2b6bd71a42e3adc60cea936aebda
+modified: 1649218333056
+created: 1649128663300
+url: "{{ _.url }}{% request 'name', '', 0 %}"
+name: /discount
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"name": "Teste",
+    	"percentage": 10
+    }
+parameters: []
+headers:
+  - name: Accept
+    value: application/json
+    description: ""
+    id: pair_722a3a3367894c37815417d054f2b524
+  - name: Content-Type
+    value: application/json
+    id: pair_45acf2c5a0c44ba78d4627222a88ee87
+authentication:
+  type: bearer
+  token: "{{ _.token }}"
+metaSortKey: -1649124968052.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
