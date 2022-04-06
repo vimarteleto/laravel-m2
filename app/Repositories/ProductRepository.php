@@ -27,12 +27,7 @@ class ProductRepository
 
 	public function getProductById($id)
 	{
-		$product = $this->model->with('campaign', 'discount')->find($id);
-		$discountAmount = $product->price * ($product->discount->percentage / 100);
-		$newPrice =  $product->price - $discountAmount;
-		$product->push($newPrice);
-
-		return $product;
+		return $this->model->with('campaign', 'discount')->find($id);
 	}
 
 	public function updateProduct(ProductRequest $request, $id)
