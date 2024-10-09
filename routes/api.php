@@ -26,11 +26,11 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
 
     // Campaign
-    Route::post('/campaign', ['App\Http\Controllers\API\CampaignController', 'createCampaign']);
-    Route::get('/campaigns', ['App\Http\Controllers\API\CampaignController', 'getCampaigns']);
-    Route::get('/campaign/{id}', ['App\Http\Controllers\API\CampaignController', 'getCampaignById']);
-    Route::put('/campaign/{id}', ['App\Http\Controllers\API\CampaignController', 'updateCampaign']);
-    Route::delete('/campaign/{id}', ['App\Http\Controllers\API\CampaignController', 'deleteCampaign']);
+    Route::post('/campaign', [\App\Http\Controllers\API\CampaignController::class, 'createCampaign']);
+    Route::get('/campaigns', [\App\Http\Controllers\API\CampaignController::class, 'getCampaigns']);
+    Route::get('/campaign/{id}', [\App\Http\Controllers\API\CampaignController::class, 'getCampaignById']);
+    Route::put('/campaign/{id}', [\App\Http\Controllers\API\CampaignController::class, 'updateCampaign']);
+    Route::delete('/campaign/{id}', [\App\Http\Controllers\API\CampaignController::class, 'deleteCampaign']);
 
     // City
     Route::post('/city', [CityController::class, 'createCity']);
